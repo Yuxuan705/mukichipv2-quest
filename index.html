@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>MUKICHIP V2: DAILY SOLVER - QUEST</title>
   
-  <!-- 引入 Google Fonts: Bagel Fat One 与 Baloo Bhaijaan 2 -->
+  <!-- 引入 Google Fonts: Bagel Fat One 与 Baloo Bhaijaan 2 (包含 700 Bold 字重) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Baloo+Bhaijaan+2:wght@400;600;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Baloo+Bhaijaan+2:wght@400;600;700;800&display=swap" rel="stylesheet">
   
   <style>
     /* 引入 GitHub 仓库同目录下的 FZPangWa.ttf 字体文件 */
@@ -191,17 +191,17 @@
       font-family: '方正胖娃_GBK', 'FZPangWa-M18S', system-ui, sans-serif;
       color: var(--accent-color);
       font-size: 14pt;
-      line-height: 1.5;
-      margin-bottom: 12px;
+      line-height: 1.4;
+      margin-bottom: 4px; /* 调小边距，使中英文更靠近 */
       word-break: break-word;
     }
 
-    /* Quest 英文字体：Baloo Bhaijaan Regular */
+    /* Quest 英文字体：Baloo Bhaijaan Regular -> 加粗 (Bold 700) */
     .en-text {
       font-family: 'Baloo Bhaijaan 2', 'Baloo Bhaijaan', cursive, sans-serif;
       color: var(--accent-color);
       font-size: 13px;
-      font-weight: 400;
+      font-weight: 700; /* 设置为 Bold 加粗 */
       line-height: 1.35;
       word-break: break-word;
     }
@@ -274,273 +274,4 @@
 
       <!-- 5. 右下角 Instagram 图片按钮 -->
       <a href="https://www.instagram.com/yuxuantsuki" target="_blank" rel="noopener noreferrer" class="ig-badge-link">
-        <img src="ig-button.png" alt="@yuxuantsuki" class="ig-btn-img">
-      </a>
-    </div>
-
-  </div>
-
-  <script>
-    /* ========================================================
-       QUEST 200 项完整数据池
-       ======================================================== */
-    
-    // 1. Mini Adventure 户外与日常小冒险 (100 项)
-    const miniQuests = [
-      { zh: "去一家从没去过的旧书店。", en: "Visit a second-hand bookstore you've never been to." },
-      { zh: "坐一趟完全不知道终点是什么的公交车。", en: "Take a bus without knowing its final destination." },
-      { zh: "去菜市场买一种自己没吃过的菜。", en: "Buy a vegetable you've never tried at the local market." },
-      { zh: "去公园坐 20 分钟。", en: "Sit in a park for 20 minutes." },
-      { zh: "一个人去看一场电影。", en: "Go watch a movie by yourself." },
-      { zh: "去美术馆随机选一幅画，看它10分钟。", en: "Pick a random painting at an art gallery and stare at it for 10 minutes." },
-      { zh: "去市集给自己挑一盆植物。", en: "Pick a small potted plant for yourself at a local market." },
-      { zh: "到邮局寄一封信。", en: "Mail a letter at the post office." },
-      { zh: "去一家没吃过的餐馆吃。", en: "Dine at a restaurant you've never been to before." },
-      { zh: "在家附近找一栋最好看的建筑物。", en: "Find the most beautiful building near your home." },
-      { zh: "找一家从没进去过的本地小店，看看里面有什么。", en: "Step into a local shop you've never entered and explore." },
-      { zh: "走一条平时不会选择的街道。", en: "Take a street you usually never walk down." },
-      { zh: "去书店逛逛，然后沉浸式阅读。", en: "Wander into a bookstore and immerse yourself in reading." },
-      { zh: "买一张喜欢的明信片寄给自己。", en: "Buy a postcard you love and mail it to yourself." },
-      { zh: "给一年后的自己写一封信。", en: "Write a letter to yourself one year from now." },
-      { zh: "一个人去吃火锅。", en: "Go eat hotpot alone." },
-      { zh: "一个人去唱K。", en: "Go to Karaoke by yourself." },
-      { zh: "点菜单上平时不敢点的食物。", en: "Order something from the menu you usually don't dare to try." },
-      { zh: "带着那本一直没读完的书到咖啡店阅读两个小时。", en: "Bring that unfinished book to a cafe and read for 2 hours." },
-      { zh: "试试看喝一种完全陌生的饮料。", en: "Try drinking a beverage that is completely unfamiliar to you." },
-      { zh: "去听一场音乐会/音乐节。", en: "Attend a concert or music festival." },
-      { zh: "去听完一整张的黑胶唱片。", en: "Listen to a vinyl album all the way through." },
-      { zh: "到便利店买一个平时不会买的东西。", en: "Buy an item at a convenience store that you normally wouldn't buy." },
-      { zh: "去做一个没做过的运动。", en: "Try out a sport or workout you've never done before." },
-      { zh: "选一个颜色，然后拍6张此颜色东西的照片组合起来。", en: "Pick a color, take 6 photos of things in that color, and collage them." },
-      { zh: "约朋友去海边看日出。", en: "Invite a friend to watch the sunrise at the beach." },
-      { zh: "认识一个新的人。", en: "Get to know a new person." },
-      { zh: "尝试一种陌生国家的早餐。", en: "Try a traditional breakfast from a country you're unfamiliar with." },
-      { zh: "自己调一杯没喝过的饮料。", en: "Mix a homemade drink you've never made before." },
-      { zh: "用左手写一段日记/记录。", en: "Write a short diary entry using your non-dominant hand." },
-      { zh: "临摹一幅自己喜欢的画。", en: "Copy or sketch a painting that you love." },
-      { zh: "折一只纸鹤。", en: "Fold an origami paper crane." },
-      { zh: "去尝试看陶艺。", en: "Go try or observe pottery making." },
-      { zh: "把之前的旧照片弄成一本小相册。", en: "Organize your old photos into a small photo album." },
-      { zh: "收拾房间。", en: "Clean and tidy up your room." },
-      { zh: "随机进入一家没去过的小店。", en: "Walk randomly into a small shop you've never visited." },
-      { zh: "买一件“完全没用但很喜欢”的东西。", en: "Buy something that is completely useless but you love." },
-      { zh: "逛逛古着店。", en: "Browse through a vintage or thrift shop." },
-      { zh: "穿平时绝对不会穿的风格。", en: "Wear a style of outfit you normally would never wear." },
-      { zh: "买一束花给自己。", en: "Buy a bouquet of flowers for yourself." },
-      { zh: "给自己拍一组证件照之外的正式肖像。", en: "Take a formal portrait of yourself other than ID photos." },
-      { zh: "关掉GPS，在街道乱走一天。", en: "Turn off your GPS and wander around the streets for a day." },
-      { zh: "躺在草地上看云。", en: "Lie down on the grass and watch the clouds." },
-      { zh: "一个人去公园看书。", en: "Go to a park alone to read a book." },
-      { zh: "拿手机关机半天，把一件一直拖延的事情做了。", en: "Turn off your phone for half a day and finish a task you've been procrastinating." },
-      { zh: "找一个晴朗的夜晚看星星。", en: "Find a clear night sky to go stargazing." },
-      { zh: "尝试冥想。", en: "Give meditation a try." },
-      { zh: "听一张从来没听过的专辑。", en: "Listen to a music album you've never heard before." },
-      { zh: "看一集辩论综艺。", en: "Watch an episode of a debate show." },
-      { zh: "跟自己约会一天~", en: "Take yourself on a one-day date~" },
-      { zh: "去吃一餐一直想吃但是一直拖的食物。", en: "Go eat a meal you've been craving but postponing for a long time." },
-      { zh: "坐MRT去到某一站，到附近走走逛逛。", en: "Take the train to a random station and explore the neighborhood." },
-      { zh: "学三句完全陌生语言的日常用语。", en: "Learn 3 daily phrases in a completely foreign language." },
-      { zh: "学会写自己的名字的另一种文字。", en: "Learn how to write your name in another script or language." },
-      { zh: "学一个完全和专业无关的小技能。", en: "Learn a tiny skill completely unrelated to your field or major." },
-      { zh: "去参加一次工作坊。", en: "Attend a hands-on workshop." },
-      { zh: "玩新的桌游。", en: "Play a new board game." },
-      { zh: "去参加一次城市里的闲暇交换活动。", en: "Participate in a local community swap or exchange event." },
-      { zh: "随机选一本书，连续读30页。", en: "Pick a book at random and read 30 pages straight." },
-      { zh: "去图书馆待一整个下午。", en: "Spend a full afternoon relaxing at the library." },
-      { zh: "一个人去看一部平时不看的电影。", en: "Watch a movie genre you don't usually watch, all by yourself." },
-      { zh: "问长辈一个从没问过的问题。", en: "Ask an elder a question you've never asked them before." },
-      { zh: "问长辈一段他们年轻时的故事。", en: "Ask an elder to tell a story from when they were young." },
-      { zh: "去小时候喜欢的地方看看。", en: "Visit a place you used to love as a child." },
-      { zh: "给未来的自己留一个“时间胶囊”。", en: "Create a time capsule for your future self." },
-      { zh: "无所谓，现在想做什么就做什么。", en: "Whatever! Do whatever you feel like doing right now." },
-      { zh: "认真体验一次“什么都不管的一天”。", en: "Truly experience a day where you care about nothing." },
-      { zh: "庆祝一下！！（没有原因，什么都值得庆祝～）", en: "Celebrate!! (For no reason at all, everything is worth celebrating~)" },
-      { zh: "今天走楼梯，不坐电梯。", en: "Take the stairs today instead of the elevator." },
-      { zh: "今天听一个播客代替刷视频和社交软体。", en: "Listen to a podcast today instead of scrolling social media or videos." },
-      { zh: "记一个新成语。", en: "Learn and memorize a new idiom." },
-      { zh: "学一个简单的魔术小技巧。", en: "Learn a simple magic trick." },
-      { zh: "看一篇神话故事。", en: "Read a myth or fairy tale." },
-      { zh: "去骑个自行车吧。", en: "Go for a bicycle ride." },
-      { zh: "泡个温泉。", en: "Enjoy a hot spring or a relaxing hot bath." },
-      { zh: "今天任性请假无所谓做什么。", en: "Take a day off spontaneously today without worrying about what to do." },
-      { zh: "看一场脱口秀。", en: "Watch a stand-up comedy show." },
-      { zh: "体验一个新的运动。", en: "Experience a new sport." },
-      { zh: "玩一个完全没玩过的游戏。", en: "Play a game you have never played before." },
-      { zh: "探索你常去的商场里一个从没认真逛过的楼层。", en: "Explore a floor in your frequent mall that you've never walked around carefully." },
-      { zh: "去面包/甜品店买一个想吃很久的面包或者甜品。", en: "Go to a bakery/dessert shop and buy a pastry you've wanted for a long time." },
-      { zh: "去一家二手店，寻找最感兴趣的一件商品。", en: "Go to a thrift store and find the item that interests you the most." },
-      { zh: "把家里旧的物品改造成新东西。", en: "Upcycle an old item at home into something new." },
-      { zh: "走到附近一条街的尽头，再用另一条安全路线回来。", en: "Walk to the end of a nearby street, then return via another safe route." },
-      { zh: "去看日落!!", en: "Go watch the sunset!!" },
-      { zh: "给一个你还有话想对他说的人寄信。", en: "Send a letter to someone you still have unspoken words for." },
-      { zh: "去一间喜欢的饮料店，点一杯没喝过的。", en: "Go to a favorite drink shop and order a beverage you haven't tried." },
-      { zh: "去附近的景点或地标，像游客一样重新认识它。", en: "Visit a nearby landmark and rediscover it like a tourist." },
-      { zh: "找一间有窗边座位的店，观察窗外 10 分钟。", en: "Find a cafe with a window seat and watch the outside world for 10 minutes." },
-      { zh: "试试城市摄影散步，自己定个主题去拍。", en: "Try a photo walk around the city with a theme of your choice." },
-      { zh: "找一个适合坐着发呆的地方，停留 15 分钟。", en: "Find a peaceful spot to zone out for 15 minutes." },
-      { zh: "在附近的商场找一件你没见过的日常用品。", en: "Search a nearby mall for an everyday item you've never seen before." },
-      { zh: "坐在公园长椅上看人。", en: "People-watch while sitting on a park bench." },
-      { zh: "找一家有特色的本地小店，给自己一个理由下次再来。", en: "Find a unique local shop and give yourself a reason to visit again next time." },
-      { zh: "开始记录收支明细，使用记账软件。", en: "Start tracking your daily expenses using a budgeting app." },
-      { zh: "给自己做一顿美味的晚餐。", en: "Cook a delicious dinner for yourself." },
-      { zh: "参加一次线下兴趣活动。（读书会、音乐会……)", en: "Join an offline interest meetup (book club, concert...)." },
-      { zh: "约一个想见面很久的人见一面。", en: "Meet up with someone you've been wanting to see for a long time." },
-      { zh: "换一个新发型。", en: "Get a brand new haircut or hairstyle." },
-      { zh: "出去散步或者慢跑。", en: "Go out for a walk or a gentle jog." }
-    ];
-
-    // 2. Inner Quest 深度思考与治愈类 (100 项)
-    const innerQuests = [
-      { zh: "写下最近真正让你感到开心的一件小事。", en: "Write down a recent small thing that genuinely made you happy." },
-      { zh: "回想最近一次觉得自己很自由的时刻。", en: "Recall the most recent moment you felt truly free." },
-      { zh: "写下一个你一直想尝试、却迟迟没开始的兴趣。", en: "Write down an interest you've always wanted to try but haven't started yet." },
-      { zh: "列出三件你喜欢、但不需要擅长的事。", en: "List three things you enjoy doing, even if you're not good at them." },
-      { zh: "给现在的自己写一封只有三句话的信。", en: "Write a three-sentence letter to your present self." },
-      { zh: "抛开所有社会角色，用三个词形容“我”自己。", en: "Setting aside all social roles, describe yourself in three words." },
-      { zh: "写下一个你想停止勉强自己的地方。", en: "Write down one area where you want to stop forcing yourself." },
-      { zh: "问自己：如果没有人评价，我会想尝试什么？", en: "Ask yourself: What would I try if no one were judging me?" },
-      { zh: "记下最近让你感到好奇的一个问题。", en: "Note down a question that recently sparked your curiosity." },
-      { zh: "写下一个你最近做得不错的小决定。", en: "Write down a recent small decision you made well." },
-      { zh: "列出三件不花钱也能让你开心的事。", en: "List three free things that make you happy." },
-      { zh: "什么事情会让你忘记时间？", en: "What activity makes you lose track of time?" },
-      { zh: "写下你希望未来的自己记得的一个普通瞬间。", en: "Write down an ordinary moment you hope your future self remembers." },
-      { zh: "做什么事情会让我感觉“这就是我”？", en: "What action makes you feel 'this is truly me'?" },
-      { zh: "写下一个你愿意慢慢学习、不急着精通的技能。", en: "Write down a skill you're willing to learn slowly without rushing to master." },
-      { zh: "想想最近哪一刻最像真正的自己。", en: "Think about which recent moment felt most like your true self." },
-      { zh: "如果完全不会失败，最想尝试的一件事是什么？", en: "If failure were impossible, what is the one thing you'd try?" },
-      { zh: "写下一个你想守住的个人界限。", en: "Write down a personal boundary you want to protect." },
-      { zh: "问自己：最近我最想从生活里增加什么？", en: "Ask yourself: What do I want to add to my life the most right now?" },
-      { zh: "记录一件你最近学会的小事。", en: "Record a small thing you recently learned." },
-      { zh: "我做过最勇敢的一件事是什么？", en: "What is the bravest thing you have ever done?" },
-      { zh: "写下一个你可以暂时放下的期待。", en: "Write down an expectation you can temporarily let go of." },
-      { zh: "回忆一个让你感到被理解的时刻。", en: "Recall a moment when you felt deeply understood." },
-      { zh: "想想你最近忽略了自己的哪个需求。", en: "Think about a personal need you've been neglecting lately." },
-      { zh: "有没有一件事，是你一直无法释怀的？", en: "Is there something you've never been able to let go of?" },
-      { zh: "哪一次“失败”在后来看，其实是一次宝贵的转机？", en: "Which past 'failure' actually turned out to be a blessing in disguise?" },
-      { zh: "写下一个你不再需要向别人证明的事情。", en: "Write down something you no longer need to prove to anyone." },
-      { zh: "列出一个想减少的习惯和一个想增加的习惯。", en: "List one habit you want to reduce and one you want to build." },
-      { zh: "想想如果今天只完成一件事，什么最值得？", en: "If you could only accomplish one thing today, what would be most worthwhile?" },
-      { zh: "写下一个你想重拾的小兴趣。", en: "Write down a small hobby you'd like to pick up again." },
-      { zh: "问自己：什么事情会让我恢复一点精神？", en: "Ask yourself: What small action recharges your energy a bit?" },
-      { zh: "写下你最近想了解的一个关于自己的问题。", en: "Write down a question about yourself that you'd like to explore." },
-      { zh: "想想你最自在的时候，通常身处什么环境？", en: "What environment are you in when you feel most at ease?" },
-      { zh: "写下一个你愿意慢慢来、不必赶进度的目标。", en: "Write down a goal you're comfortable taking slowly without rushing." },
-      { zh: "问自己：我最近是在期待什么，还是在逃避什么？", en: "Ask yourself: Am I anticipating something, or running away from something?" },
-      { zh: "你的人生“遗愿清单”上，前三项是什么？", en: "What are the top three items on your bucket list?" },
-      { zh: "如果生命只剩下三年，你会立刻开始做什么？", en: "If you had three years left to live, what would you start doing immediately?" },
-      { zh: "你理想的生活状态，具体是什么样的画面？", en: "What does your ideal life specifically look like?" },
-      { zh: "你希望别人将来在葬礼上如何评价自己？", en: "How do you hope people will remember you at your funeral?" },
-      { zh: "你内心深处，一个不敢告诉太多人的梦想是什么？", en: "What is a secret dream deep down that you rarely tell anyone?" },
-      { zh: "什么样的朋友是你主动会选择远离的？", en: "What kind of friend do you actively choose to distance yourself from?" },
-      { zh: "在亲密关系中，你最看重对方的一个特质是什么？", en: "What is the single trait you value most in an intimate relationship?" },
-      { zh: "当你需要帮助时，你能够坦然地向谁求助？", en: "Who can you comfortably reach out to when you need help?" },
-      { zh: "谁是你可以毫无顾忌分享悲伤和脆弱的人？", en: "Who can you share your grief and vulnerability with without hesitation?" },
-      { zh: "你目前的工作/生活，能给自己带来成就感吗？", en: "Does your current work/life bring you a sense of fulfillment?" },
-      { zh: "你每天花最多时间的一件事是什么？", en: "What single activity consumes most of your daily time?" },
-      { zh: "如果财务自由，你还会继续做选择的工作吗？", en: "If you were financially free, would you still choose your current work?" },
-      { zh: "什么东西（实物或习惯）是你需要“断舍离”的？", en: "What physical item or habit do you need to declutter or let go of?" },
-      { zh: "你想解决什么问题？（个人层面，他人层面，社会层面）", en: "What problem do you wish to solve (personally, for others, or socially)?" },
-      { zh: "你是否活在了别人的期待里？", en: "Are you living your life to fulfill someone else's expectations?" },
-      { zh: "有什么事情是你应该做，但其实内心非常抗拒的？", en: "What is something you 'should' do, but deeply resist inside?" },
-      { zh: "你是否经常进行自我批评？", en: "Do you engage in harsh self-criticism often?" },
-      { zh: "你是否足够自私地保护了自己的时间和精力？", en: "Are you protecting your time and energy selfishly enough?" },
-      { zh: "你如何定义“成功”？", en: "How do you define 'success'?" },
-      { zh: "你想给这个世界留下点什么？", en: "What do you want to leave behind for the world?" },
-      { zh: "当你老了，回望一生，怎样才算没有白活？", en: "When you are old looking back, what means a life well lived?" },
-      { zh: "抛开所有限制，你灵魂真正渴望体验的是什么？", en: "Setting aside all limits, what does your soul truly long to experience?" },
-      { zh: "现在的你和五年前比，最大的变化是？", en: "Compared to five years ago, what is your biggest change?" },
-      { zh: "哪一刻让你觉得“活着真好”？", en: "Which moment made you think, 'It's so good to be alive'?" },
-      { zh: "如果时光倒流，最想弥补什么？", en: "If time could turn back, what mistake would you make up for?" },
-      { zh: "临死前最想做的一件事？", en: "What is the one thing you want to do before dying?" },
-      { zh: "童年记忆里最温暖的画面是？", en: "What is the warmest memory from your childhood?" },
-      { zh: "谁的存在让你觉得踏实？", en: "Whose presence makes you feel grounded and secure?" },
-      { zh: "你觉得婚姻是必需品吗？", en: "Do you believe marriage is a necessity in life?" },
-      { zh: "“家”对你来说意味着什么？", en: "What does 'home' mean to you?" },
-      { zh: "你最享受的三个时刻是什么？", en: "What are the three moments you enjoy most in life?" },
-      { zh: "问自己：我想做这件事，是因为喜欢，还是因为应该？", en: "Ask yourself: Am I doing this because I love it, or because I 'should'?" },
-      { zh: "写下一个你希望自己少一点在意的评价。", en: "Write down an evaluation or judgment you wish you cared less about." },
-      { zh: "记录一件你以前不喜欢、现在却理解了的事。", en: "Record something you used to dislike but now understand." },
-      { zh: "问自己：我什么时候最容易忘记做自己？", en: "Ask yourself: When do I find it easiest to forget being myself?" },
-      { zh: "记录一个你最近改变看法的事情。", en: "Record something you recently changed your mind about." },
-      { zh: "想想你希望别人理解你哪一个不太明显的面向。", en: "Think about a subtle side of yourself you wish others understood." },
-      { zh: "回想一个让你感到骄傲、但很少提起的时刻。", en: "Recall a proud moment you rarely mention to others." },
-      { zh: "列出三个你想保留的生活习惯。", en: "List three lifestyle habits you want to keep." },
-      { zh: "问自己：我现在是在需要答案，还是只需要时间？", en: "Ask yourself: Do I need an answer right now, or just time?" },
-      { zh: "你最不想成为什么样的人？", en: "What kind of person do you least want to become?" },
-      { zh: "写下一个你可以不完美地开始的事情。", en: "Write down something you can start imperfectly today." },
-      { zh: "问自己：我现在的生活里，什么值得保留？", en: "Ask yourself: What in my current life is worth keeping?" },
-      { zh: "列出三件你想尝试、但可以随时改变主意的事。", en: "List three things you want to try but can change your mind on anytime." },
-      { zh: "你最羡慕别人的是什么？", en: "What do you envy most about others?" },
-      { zh: "记录一个你最近对自己产生的新发现。", en: "Record a recent new discovery about yourself." },
-      { zh: "给自己设计一个不以成绩衡量的个人成就。", en: "Design a personal achievement not measured by grades or status." },
-      { zh: "问自己：我真正想要的是结果，还是过程中的感受？", en: "Ask yourself: Do I want the end result, or the feeling during the process?" },
-      { zh: "你愿意为了什么付出长期努力？", en: "What are you willing to put long-term effort into?" },
-      { zh: "列出三件你做起来很自然、却值得珍惜的事。", en: "List three things that come naturally to you but are worth cherishing." },
-      { zh: "写下一个你想减少的自我批评。", en: "Write down a piece of self-criticism you want to diminish." },
-      { zh: "回想一个你曾经很在意、现在已经放下的事。", en: "Recall something you used to care intensely about but have now let go of." },
-      { zh: "记录一个你想感谢但还没表达的人或时刻。", en: "Record a person or moment you want to thank but haven't yet." },
-      { zh: "你相信命运是注定的吗？", en: "Do you believe fate is predetermined?" },
-      { zh: "你还相信“永远”吗？", en: "Do you still believe in 'forever'?" },
-      { zh: "提起什么事，你就想立刻逃避？", en: "What topic makes you want to run away immediately?" },
-      { zh: "绝望时，是什么让你看到了希望？", en: "When in despair, what gave you a glimmer of hope?" },
-      { zh: "你尝试放下过某种执念吗？成功了吗？", en: "Have you tried to let go of an obsession? Did you succeed?" },
-      { zh: "只要我不说，就没人知道的秘密是？", en: "What is a secret no one knows as long as you don't speak?" },
-      { zh: "那个放弃了却还在心里的梦想是？", en: "What dream did you give up on, but still lives in your heart?" },
-      { zh: "人性的哪种特质你最珍视？", en: "What human trait do you treasure the most?" },
-      { zh: "最害怕重复经历什么样的痛苦？", en: "What kind of pain are you most afraid of repeating?" },
-      { zh: "排序题：金钱、健康、爱什么最重要？", en: "Rank these: Money, Health, Love — which matters most?" },
-      { zh: "什么让你感到有意义？", en: "What gives you a sense of meaning?" },
-      { zh: "哪些“应该”正在消耗我？（社会期待 vs 真实需求）", en: "Which 'shoulds' are draining you? (Social expectations vs True needs)" }
-    ];
-
-    /* ========================================================
-       2 秒滚轮抽签逻辑
-       ======================================================== */
-    let isRolling = false;
-
-    function selectQuest(type) {
-      if (isRolling) return;
-      isRolling = true;
-
-      let pool = [];
-      if (type === 'mini') {
-        pool = miniQuests;
-      } else if (type === 'inner') {
-        pool = innerQuests;
-      } else {
-        // Random Quest: 混合 Mini 与 Inner
-        pool = [...miniQuests, ...innerQuests];
-      }
-
-      const contentArea = document.getElementById('questContentArea');
-      const zhDisplay = document.getElementById('zhDisplay');
-      const enDisplay = document.getElementById('enDisplay');
-
-      contentArea.classList.add('rolling');
-
-      const duration = 2000;    // 2秒
-      const intervalTime = 60;  // 60ms 快速轮播
-      let elapsedTime = 0;
-
-      const timer = setInterval(() => {
-        const tempIndex = Math.floor(Math.random() * pool.length);
-        zhDisplay.textContent = pool[tempIndex].zh;
-        enDisplay.textContent = pool[tempIndex].en;
-
-        elapsedTime += intervalTime;
-
-        if (elapsedTime >= duration) {
-          clearInterval(timer);
-          
-          const finalIndex = Math.floor(Math.random() * pool.length);
-          zhDisplay.textContent = pool[finalIndex].zh;
-          enDisplay.textContent = pool[finalIndex].en;
-
-          contentArea.classList.remove('rolling');
-          isRolling = false;
-        }
-      }, intervalTime);
-    }
-  </script>
-</body>
-</html>
+        <img src="ig-button.png" alt="@yuxu
