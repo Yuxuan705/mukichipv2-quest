@@ -5,12 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>MUKICHIP V2: DAILY SOLVER - QUEST</title>
   
-  <!-- 引入 Google Fonts: Bagel Fat One, Baloo Bhaijaan 2 与 Ma Shan Zheng -->
+  <!-- 引入 Google Fonts: Bagel Fat One 与 Baloo Bhaijaan 2 -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Baloo+Bhaijaan+2:wght@400;600;800&family=Ma+Shan+Zheng&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Baloo+Bhaijaan+2:wght@400;600;800&display=swap" rel="stylesheet">
   
   <style>
+    /* 引入 GitHub 仓库同目录下的 FZPangWa.ttf 字体文件 */
+    @font-face {
+      font-family: '方正胖娃_GBK';
+      src: url('FZPangWa.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+    }
+
     /* 全局配色变量 */
     :root {
       --bg-color: #F8F6F3;        /* 背景颜色 */
@@ -178,9 +186,9 @@
       opacity: 0.7;
     }
 
-    /* Quest 中文字体：Ma Shan Zheng，14pt */
+    /* Quest 中文字体：自定义加载的 方正胖娃_GBK，14pt */
     .zh-text {
-      font-family: 'Ma Shan Zheng', cursive, sans-serif;
+      font-family: '方正胖娃_GBK', 'FZPangWa-M18S', system-ui, sans-serif;
       color: var(--accent-color);
       font-size: 14pt;
       line-height: 1.5;
@@ -500,7 +508,7 @@
       } else if (type === 'inner') {
         pool = innerQuests;
       } else {
-        // Random Quest: 混合 Mini(100) 与 Inner(100) 共 200 项
+        // Random Quest: 混合 Mini 与 Inner
         pool = [...miniQuests, ...innerQuests];
       }
 
@@ -510,8 +518,8 @@
 
       contentArea.classList.add('rolling');
 
-      const duration = 2000;    // 持续 2 秒
-      const intervalTime = 60;  // 每 60ms 快速滚轮一次
+      const duration = 2000;    // 2秒
+      const intervalTime = 60;  // 60ms 快速轮播
       let elapsedTime = 0;
 
       const timer = setInterval(() => {
